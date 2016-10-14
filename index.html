@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My ToDo Application</title>
+	<meta charset="utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1">
+   
+   
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-translate/dist/angular-translate.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-translate-loader-partial/angular-translate-loader-partial.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script> ></script>
+</head>
+<body ng-app="MyApp">
+
+<div  ng-controller="mainController">
+   <header class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><h1 translate="title">My To Do Application</h1>
+ 
+   </header>
+   <div class="add col-xs-12 col-sm-12 col-md-12 col-lg-12">
+   	<a href="#" translate="add" class="pull-right" ng-click="open()" data-toggle="modal" data-target="#myModal">Add</a>
+   </div>
+  
+
+   <!-- table part starts -->
+   <div class="main_table col-xs-12 col-sm-12 col-md-12 col-lg-12">
+     <table>
+       <tr>
+       	<th>#</th>
+       	<th translate="taskId">Task Id</th>
+       	<th translate="taskName">Task Name</th>
+       	<th translate="mark">Mark Completed</th>
+       	<th translate="removeTask">Remove Task</th>
+       </tr> 
+       <tr ng-repeat="task in tasks" ng-model="content_row" ng-class="{'checked':task.checkbox}">
+       	 <td>{{$index+1}}</td>
+       	 <td>{{task.task_id}}</td>
+       	 <td>{{task.task_name}}</td>
+       	 <td><input type="checkbox" name="checked" ng-init="checked=false" ng-model="task.checkbox" ng-checked="isChecked"></td>
+       	 <td><a href="#" ng-click="remove($index)" translate="remove" class="remove">Remove</a></td>
+       </tr>   	
+
+     </table>
+   	
+   </div>
+   <!-- main table part ends -->
+
+<!-- translate buttons -->
+<a class="btn ng-scope" ng-click="changeLanguage('en')">english</a>
+<a class="btn ng-scope" ng-click="changeLanguage('hn')">hindi</a>
+<a class="btn ng-scope" ng-click="changeLanguage('tn')">tamil</a>
+</div>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="controllers/mainController.js"></script>
+<script type="text/javascript" src="controllers/popupController.js"></script>
+<script type="text/javascript" src="factories/myFactory.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+header h1 ,.new_task{
+	text-align: center;
+}
+header h1{
+	font: bold verdana;
+}
+.new_task  fieldset{
+	padding: 10px;
+}
+.new_task input{
+    border-radius: 2px;
+}
+
+.add_details{
+	background-color: #337ab7;
+	margin-right: 150px;
+}
+.cancel_details{
+	background-color: #5bc0de;
+	margin-left:150px;
+}
+.add_details,.cancel_details{
+	color: #fff;
+	border: none;
+	border-radius: 3px;
+	padding: 12px;
+}
+table{
+	text-align: center;
+	margin: 0 auto;
+	width: 100%;
+}
+th{
+	text-align: center;
+}
+ tr th,tr td{
+ 	padding: 20px;
+	border-bottom: 1px solid #ddd;
+
+}
+.checked{
+	background-color: #ccc;
+}
+.remove{
+	color: #3382c6;
+}
+#myModal{
+	background-color: #fff;
+}

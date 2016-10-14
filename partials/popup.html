@@ -1,0 +1,30 @@
+ <div class="new_task" id="myModal">
+   	<!-- task details entering part starts -->
+    <!-- content part -->
+  
+    <h2>Add New User</h2>
+   	<fieldset class="col-xs-12">
+   		<label class="col-xs-2" translate="taskId">Task Id : </label>
+   		<input type="text" name="task_id" ng-model="taskId" class="col-xs-9 col-sm-9 col-md-9 col-lg-9" required ng-pattern="onlyNumbers">
+   	</fieldset>
+   	<fieldset class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+   		<label class="col-xs-2 col-sm-2 col-md-2 col-lg-2" translate="taskName">Task 
+      Name : </label>
+   		<input type="text" name="task_name" ng-model="taskName" class="col-xs-9 col-sm-9 col-md-9 col-lg-9" required>
+   	</fieldset>
+   	<!-- task details entering part ends -->
+
+   	<!-- add cancel part starts -->
+   	<div class="buttons">
+   		<button class="add_details " value="add" ng-click="addDetails()" data-dismiss="modal" translate="add">
+   			Add
+   		</button>
+   		<button class="cancel_details" value="cancel" ng-click="cancel()" data-dismiss="modal" translate="cancel">
+   			Cancel
+   		</button>
+   	</div>
+   	<!-- add cancel part ends -->
+    
+    <!-- modal part ends -->
+  
+   </div>
